@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = %w[README.rdoc LICENSE]
 
   s.add_dependency('json_pure', '~> 1.5')
-  s.add_dependency('rest-client', '~> 1.4')
+  s.add_dependency('rest-client', '>= 1.4', '<= 2.0.2')
 
   s.add_development_dependency('rpsec', '~> 2.9.0')
   s.add_development_dependency('mocha')
