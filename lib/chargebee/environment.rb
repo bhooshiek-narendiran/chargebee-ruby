@@ -15,8 +15,8 @@ module ChargeBee
       end
     end
 
-    def api_url(url)
-      url = @api_endpoint + url
+    def api_url(url, is_v2 = false) # providing support for v2
+      (is_v2 ? @api_endpoint[0..-2] + '2' :  @api_endpoint) + url
     end
     
   end

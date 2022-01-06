@@ -6,6 +6,7 @@ module ChargeBee
     
     def self.request(method, url, env, params=nil, headers)
       raise Error.new('No environment configured.') unless env
+      is_v2 = params.delete('v2')
       api_key = env.api_key
       
       if(ChargeBee.verify_ca_certs?)
@@ -33,7 +34,7 @@ module ChargeBee
         }.merge(headers)      
       opts = {
         :method => method,
-        :url => env.api_url(url),
+        :url => env.api_url(url, is_v2),
         :user => api_key,
         :headers => headers,
         :payload => payload,
