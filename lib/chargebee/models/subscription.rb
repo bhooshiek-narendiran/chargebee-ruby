@@ -38,8 +38,8 @@ module ChargeBee
     Request.send('get', uri_path("customers",id.to_s,"subscriptions"), params, env, headers)
   end
 
-  def self.retrieve(id, env=nil, headers={})
-    Request.send('get', uri_path("subscriptions",id.to_s), {}, env, headers)
+  def self.retrieve(id, params={}, env=nil, headers={})
+    Request.send('get', uri_path("subscriptions",id.to_s), params, env, headers)
   end
 
   def self.retrieve_with_scheduled_changes(id, env=nil, headers={})
